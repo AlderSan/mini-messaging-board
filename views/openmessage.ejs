@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Messaging Board</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+   <%- include('navbar') %>
+    <div class="container">
+        </div>
+        <div class="row">
+            <div class="col-8 gy-2 mx-auto">
+                <div class="return" style="text-align: center;">
+                    <a href='/'>RETURN TO HOME</a>
+                </div>
+                
+                <ul>
+                    <%- include('messagecard', {message: message}); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

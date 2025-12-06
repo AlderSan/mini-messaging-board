@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
-/* const dotenv = require("dotenv").config(); */
-/* const PORT = process.env.SERVERPORT; */
 const PORT = 3000;
 const assetsPath = path.join(__dirname, "public");
 
@@ -41,6 +39,12 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("new");
   console.log('new render working');
+});
+
+app.get("/open/:messageId", (req, res) => {
+  const { messageId } = req.params;
+  console.log(messageId);
+  res.render('openmessage', {message: messages[messageId - 1]});
 });
 
 app.listen(PORT, (error) => {
