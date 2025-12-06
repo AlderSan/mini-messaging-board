@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Messaging Board</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+   <%- include('navbar') %>
+    <div class="container">
+        </div>
+        <div class="row">
+            <div class="col-8 gy-2 mx-auto">
+                <div class="return" style="text-align: center;">
+                    <a href='/'>RETURN TO HOME</a>
+                </div>
+                <form method="POST" action="/new">
+                <div class="container form-group my-2 text-center">
+                    <h2 class="text-light mx-auto">Please enter your username and message</h2>
+                    <div class="form-floating my-2">
+                    <input type="text" id="user" class="form-control" required placeholder=" ">
+                    <label for="user" class="form-label">Username</label>
+                    </div>
+                    <div class="form-floating my-2">
+                    <textarea id="text" class="form-control" style="height: 150px" required placeholder=" "></textarea>
+                    <label for="text" class="form-label">Message</label
+                    </div>
+                    <button class="btn btn-dark mx-auto my-2" type="submit"> Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
