@@ -1,5 +1,4 @@
-@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
-
+@import URL('bootstrap.min.css');
 .box {
     background-color: lightblue;
     border: 1px solid blue;
