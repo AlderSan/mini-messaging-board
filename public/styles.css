@@ -5,3 +5,7 @@
     min-height: 50px;
     font-size: 2rem;
 }
+
+.btn-outline-light:hover {
+    color:black;
+}
