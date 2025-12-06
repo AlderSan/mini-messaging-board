@@ -9,3 +9,13 @@
 .btn-outline-light:hover {
     color:black;
 }
+
+body {
+    background-color: #1e0d80;
+}
+
+.card-text {
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}

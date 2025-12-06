@@ -6,6 +6,27 @@ const path = require("node:path");
 const PORT = 3000;
 const assetsPath = path.join(__dirname, "public");
 
+//starting messages
+const messages = [
+  {
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date(),
+    id: 1
+  },
+  {
+    text: "Hello World!",
+    user: "Charles",
+    added: new Date(),
+    id: 2
+  },
+  {text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac blandit dolor. Maecenas sollicitudin malesuada leo. Nulla vel tellus enim. Maecenas pellentesque ante sem, eget.",
+    user: "Alex",
+    added: new Date(),
+    id: 3
+  }
+];
+
 //enable public assets and EJS engine
 app.use(express.static(assetsPath));
 app.set("views", path.join(__dirname, "views"));
@@ -13,7 +34,7 @@ app.set("view engine", "ejs");
 
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { messages: messages });
   console.log('index render working');
 });
 
