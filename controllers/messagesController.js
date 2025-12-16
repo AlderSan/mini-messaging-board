@@ -19,7 +19,6 @@ async function newMessagePost(req, res){
   console.log('Received form data:', formData);
   await db.insertMessage(formData);
   res.status(200).json({ message: 'Form data received successfully!', data: formData });
-  res.redirect("/");
 };
 
 //messagesController.openMessage
