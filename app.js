@@ -56,6 +56,10 @@ app.get("/open/:messageId", (req, res) => {
   res.render('openmessage', {message: messages[messageId - 1]});
 });
 
+app.get("/{*splat}", (req, res) => {
+  res.redirect("/");
+});
+
 app.listen(PORT, (error) => {
   // This is important!
   // Without this, any startup errors will silently fail
