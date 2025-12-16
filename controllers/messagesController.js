@@ -1,4 +1,4 @@
-const db = require("../db/pool.js");
+const db = require("../db/queries");
 
 // messagesController.getMessages
 async function getMessages(req, res) {

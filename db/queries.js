@@ -1,7 +1,7 @@
 const pool = require("./pool");
 
 //getAllMessages
-async function getAllMessage() {
+async function getAllMessages() {
   const { rows } = await pool.query("SELECT * FROM messages");
   return rows;
 }
@@ -16,3 +16,9 @@ async function getQueryMessage(messageId) {
   const { rows } = await pool.query("SELECT * FROM messages WHERE id = ($1)", [messageId]);
   return rows;
 }
+
+module.exports = {
+  getAllMessages,
+  getQueryMessage,
+  insertMessage
+};
