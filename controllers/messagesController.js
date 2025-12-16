@@ -26,7 +26,11 @@ async function openMessage(req, res){
     const { messageId } = req.params;
     console.log(messageId);
     const message = await db.getQueryMessage(messageId);
+    if (message === undefined) {
+        res.redirect("/");
+    } else {
     res.render("openmessage", {message: message});
+    }
 };
 
 async function deleteMessage(req, res){
