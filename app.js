@@ -5,6 +5,7 @@ const path = require("node:path");
 const assetsPath = path.join(__dirname, "public");
 const bodyParser = require("body-parser");
 const PORT = process.env.SERVER_PORT;
+const messagesRouter = require("./routes/messagesRouter");
 
 
 //enable public assets and EJS engine
@@ -13,6 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.json());
 
+//send requests to Router
 app.use("/", messagesRouter);
 
 
