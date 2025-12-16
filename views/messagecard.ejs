@@ -4,13 +4,14 @@
             <h2>
                 <%= message.username%>
             </h2>
+            <a href="<%= /open/ + message.id %>"> Open</a>
             </div>
         <div class="card-subtitle" style="font-size: 0.8em"><%= message.added%></div>
         </div>
         <div class="card-body">
         <div class="card-text">
             <%= message.text%>
-            <a href="<%= /open/ + message.id %>"> Open</a>
+            <a href="<%= /delete/ + message.id %>"> Delete</a>
         </div>
     </div>
 </li>

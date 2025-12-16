@@ -29,9 +29,17 @@ async function openMessage(req, res){
     res.render("openmessage", {message: message});
 };
 
+async function deleteMessage(req, res){
+    const { messageId } = req.params;
+    console.log(messageId);
+    await db.dropMessage(messageId);
+    res.redirect("/");
+}
+
 module.exports = {
     getMessages,
     newMessageGet,
     newMessagePost,
-    openMessage
+    openMessage,
+    deleteMessage
 };

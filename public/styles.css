@@ -14,6 +14,11 @@ body {
     background-color: #1e0d80;
 }
 
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
 .card-text {
     display: flex;
     justify-content:space-between;
