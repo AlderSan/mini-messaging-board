@@ -25,7 +25,8 @@ async function newMessagePost(req, res){
 async function openMessage(req, res){
     const { messageId } = req.params;
     console.log(messageId);
-    await db.getQueryMessage(messageId);
+    const message = await db.getQueryMessage(messageId);
+    res.render("openmessage", {message: message});
 };
 
 module.exports = {
