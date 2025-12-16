@@ -1,27 +1,37 @@
-//logic needed to create:
+const db = require("../db/pool.js");
 
-/* app.get("/", (req, res) => {
-  res.render("index", { messages: messages });
-  console.log('index render working');
-});
+// messagesController.getMessages
+async function getMessages(req, res) {
+    const messages = await db.getAllMessages();
+    res.render("index", { messages: messages });
+    console.log('index render working');
+};
 
-app.get("/new", (req, res) => {
-  res.render("new");
-  console.log('new render working');
-});
-app.post("/new", (req, res) => {
+//messagesController.newMessageGet
+async function newMessageGet(req, res){
+    res.render("new");
+    console.log('new render working');    
+};
+
+//messagesController.newMessagePost
+async function newMessagePost(req, res){
   const formData = req.body; // The parsed JSON data is in req.body
   console.log('Received form data:', formData);
-  messages.push({ text: formData.text, user: formData.user, added: new Date(), id: (messages.length + 1) });
+  await db.insertMessage(formData);
   res.status(200).json({ message: 'Form data received successfully!', data: formData });
-});
-
-app.get("/open/:messageId", (req, res) => {
-  const { messageId } = req.params;
-  console.log(messageId);
-  res.render('openmessage', {message: messages[messageId - 1]});
-});
-
-app.get("/{*splat}", (req, res) => {
   res.redirect("/");
-}); */
+};
+
+//messagesController.openMessage
+async function openMessage(req, res){
+    const { messageId } = req.params;
+    console.log(messageId);
+    await db.getQueryMessage(messageId);
+};
+
+module.exports = {
+    getMessages,
+    newMessageGet,
+    newMessagePost,
+    openMessage
+};

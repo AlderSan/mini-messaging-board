@@ -8,3 +8,5 @@ messagesRouter.get("/new", messagesController.newMessageGet);
 messagesRouter.post("/new", messagesController.newMessagePost);
 messagesRouter.get("/open/:messageId", messagesController.openMessage);
 messagesRouter.get("/{*splat}", (req, res) => res.redirect("/"));
+
+module.exports = messagesRouter;
