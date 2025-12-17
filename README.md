@@ -10,9 +10,17 @@ Pages were built using Bootstrap framework.
 V2 - updated to include a database based on PostgreSQL to include persistent messages.
 
 REQUIRES .ENV FILE WITH THE BELOW KEYS
+
 DB_HOST=
+
 DB_USER=
+
 DB_NAME=
+
 DB_PASSWORD=
+
 DB_PORT=
+
 SERVER_PORT=
+
+Currently Hosted on AWS - EC2 + RDS
